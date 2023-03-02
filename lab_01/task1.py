@@ -27,26 +27,14 @@ def analit(x):
     return 3 * math.exp(x) - x ** 2 - 2 * x - 2
 
 
-def check_format(item):
-    if type(item) == float:
-        if item > 1000000:
-            return '{:.4e}'.format(item)
-        return '{:.4f}'.format(item)
-
-    elif type(item) == int:
-        return str(item)
-    else:
-        return item
-
-
 def get_graphics(y1, y2, y3, y4, y5, y6, xlist):
     pylab.xlabel('x')
     pylab.ylabel('u(x)')
     pylab.plot(xlist, y5, label="Метод Эйлера")
-    # pylab.plot(xlist, y1, label="1-e приближение Пикара")
-    # pylab.plot(xlist, y2, label="2-e приближение Пикара")
-    # pylab.plot(xlist, y3, label="3-e приближение Пикара")
-    # pylab.plot(xlist, y4, label="4-e приближение Пикара")
+    pylab.plot(xlist, y1, label="1-e приближение Пикара")
+    pylab.plot(xlist, y2, label="2-e приближение Пикара")
+    pylab.plot(xlist, y3, label="3-e приближение Пикара")
+    pylab.plot(xlist, y4, label="4-e приближение Пикара")
     pylab.plot(xlist, y6, label="Аналитическое решение")
     pylab.legend(loc='upper left')
     pylab.title("График функции")
@@ -93,7 +81,7 @@ def main():
 
             for i in range(0, n, output_step):
                 print("|{:^9.2f}|{:^14s}|{:^15.2f}|{:^15.2f}|{:^15.2f}|{:^15.2f}|{:^15.2f}|".format(x_start,
-                                                                                                    check_format(
+                                                                                                    functions.check_format(
                                                                                                         answer_euler[
                                                                                                             i]),
                                                                                                     analit(x_start),

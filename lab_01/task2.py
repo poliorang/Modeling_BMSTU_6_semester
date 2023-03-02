@@ -27,18 +27,6 @@ def analit(x):
     return math.exp(x ** 2) - x ** 2 / 2 - 1 / 2
 
 
-def check_format(item):
-    if type(item) == float:
-        if item > 1000000:
-            return '{:.4e}'.format(item)
-        return '{:.4f}'.format(item)
-
-    elif type(item) == int:
-        return str(item)
-    else:
-        return item
-
-
 def get_graphics(y1, y2, y3, y4, y5, y6, xlist):
     pylab.xlabel('x')
     pylab.ylabel('u(x)')
@@ -93,7 +81,7 @@ def main():
 
             for i in range(0, n, output_step):
                 print("|{:^9.2f}|{:^14s}|{:^15.2f}|{:^15.2f}|{:^15.2f}|{:^15.2f}|{:^15.2f}|".format(x_start,
-                                                                                          check_format(answer_euler[i]),
+                                                                                          functions.check_format(answer_euler[i]),
                                                                                           analit(x_start),
                                                                                           picard1(x_start),
                                                                                           picard2(x_start),

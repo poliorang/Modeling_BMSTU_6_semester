@@ -25,18 +25,6 @@ def picard4(x):
                        1 / 109876902975)
 
 
-def check_format(item):
-    if type(item) == float:
-        if item > 1000000:
-            return '{:.4e}'.format(item)
-        return '{:.4f}'.format(item)
-
-    elif type(item) == int:
-        return str(item)
-    else:
-        return item
-
-
 def get_graphics(y1, y2, y3, y4, y5, xlist):
     pylab.xlabel('x')
     pylab.ylabel('u(x)')
@@ -90,7 +78,7 @@ def main():
 
             for i in range(0, n, output_step):
                 print("|{:^9.2f}|{:^14s}|{:^15.2f}|{:^15.2f}|{:^15.2f}|{:^15.2f}|".format(x_start,
-                                                                                          check_format(answer_euler[i]),
+                                                                                          functions.check_format(answer_euler[i]),
                                                                                           picard1(x_start),
                                                                                           picard2(x_start),
                                                                                           picard3(x_start),
