@@ -61,7 +61,7 @@ def main():
     output_step = int(n / 200)  # выводим только 200 значений в таблице
 
     while True:
-        print("Меню")
+        print("Меню (задание 3)")
         print("1. Таблица")
         print("2. График")
         print("")
