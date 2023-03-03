@@ -92,9 +92,6 @@ def main():
 
         elif c == 2:
             res_euler = functions.euler(n, h, 0, 0.5, function)
-            # answer_euler2 = functions.euler(n, -h, 0.5, 1, function)
-            # answer_euler2.reverse()
-            # res_euler = answer_euler2 + answer_euler1
 
             xlist = []
             ypicard1 = []
