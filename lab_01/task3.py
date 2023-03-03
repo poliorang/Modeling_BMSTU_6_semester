@@ -40,7 +40,7 @@ def get_graphics(y1, y2, y3, y4, y5, xlist):
 
 def main():
     x_start = 0  # начальное значение
-    x_end = 3  # конечное значение
+    x_end = 2  # конечное значение
     x_end_minus = 0
 
     h = 1e-6  # приближение
